@@ -1,0 +1,43 @@
+{
+  "name": "webder",
+  "version": "1.0.0",
+  "description": "Http/s proxy that render pages with js and returns HTML",
+  "main": "dist/app.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run lint && copyfiles .env ./dist/ && tsc",
+    "dev": "tsc-watch --onSuccess \"node ./dist/app.js\"",
+    "start": "cd dist && node ./app.js",
+    "start:docker": "node ./app.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint \"src/**\""
+  },
+  "keywords": [],
+  "authors": [
+    "Artemy Egorov <me@artegoser.ru> https://github.com/artegoser",
+    "DarkCat09 <darkcat09@vivaldi.net> https://dc09.ru/",
+    "megahomyak https://github.com/megahomyak"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/dompurify": "^3.0.5",
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.57.0",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.2",
+    "prettier": "^3.2.5",
+    "puppeteer": "^22.6.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

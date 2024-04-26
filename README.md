@@ -1,18 +1,20 @@
 # webder
 
-Http/s proxy that render pages with js and returns HTML
+Proxy that renders client-side JavaScript apps (e.g. React apps) on server and returns the resulting HTML code.
+
+- JS is disabled/unsupported, no proxy: blank page or "Enable JS to continue"
+- With webder: all desired content, no need to use JS interpreter
 
 > [!WARNING]
-> This service is not purify html and not blocking XSS attacks. Also it is not block requests to localhost, etc.
-> This is not intended to be used as a user-facing browser. Use it ONLY for making api calls from other services, make sure to run it behind a firewall and use a reverse proxy in front of it.
-
-## Features
-
-- Render pages with js (/render?url=...)
+> No HTML purification is performed, so passing code directly from webder can lead to XSS attacks. Local network requests are not blocked too, check domains/IPs to avoid SSRF attacks.
+> Webder is **not** intended to be used as a standalone internet-facing browser wrapper. It is a kind of internal service to which other apps (maybe internet-facing) send API requests. Either restrict connections to `127.0.0.1` only, or put webder behind a firewall and a reverse proxy (probably with authentication).
 
 ## Usage
 
-For env variables look to `.env.example`. Docker also supported.
+`/render?url=...`
+
+For available config fields, check `.env.example`.  
+Docker is supported.
 
 ```bash
 npm install

@@ -9,7 +9,6 @@
     "build": "npm run lint && copyfiles .env ./dist/ && tsc",
     "dev": "tsc-watch --onSuccess \"node ./dist/app.js\"",
     "start": "cd dist && node ./app.js",
-    "start:docker": "node ./app.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint \"src/**\""

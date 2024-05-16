@@ -1,4 +1,4 @@
-import { config } from "dotenv";
+import { config } from 'dotenv';
 
 export class ConfigService {
   public readonly host: string;
@@ -9,7 +9,7 @@ export class ConfigService {
   constructor() {
     config();
 
-    this.host = process.env.HOST || "0.0.0.0";
+    this.host = process.env.HOST || '0.0.0.0';
     this.port = Number(process.env.PORT) || 8080;
 
     this.timeout = Number(process.env.TIMEOUT) || 0;
@@ -21,6 +21,6 @@ export class ConfigService {
 
   parseBool(value: string | undefined, def: boolean): boolean {
     if (!value) return def;
-    return value === "true" || value === "1";
+    return value === 'true' || value === '1';
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "webder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Http/s proxy that render pages with js and returns HTML",
   "main": "dist/app.js",
   "private": true,
@@ -23,19 +23,20 @@
   "license": "MIT",
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
-    "@types/node": "^20.11.30",
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
     "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
-    "tsc-watch": "^6.0.4",
-    "typescript": "^5.4.3"
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@fastify/one-line-logger": "^1.3.0",
     "dotenv": "^16.4.5",
-    "fastify": "^4.26.2",
+    "fastify": "^4.27.0",
     "prettier": "^3.2.5",
-    "puppeteer": "^22.6.0",
+    "puppeteer": "^22.9.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-adblocker": "^2.13.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"

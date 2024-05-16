@@ -1,7 +1,7 @@
-import { ConfigService } from "./config/config.service";
-import Fastify from "fastify";
-import getConfig from "./config/main";
-import { puppeteer } from "./puppeteer";
+import { ConfigService } from './config/config.service';
+import Fastify from 'fastify';
+import getConfig from './config/main';
+import { puppeteer } from './puppeteer';
 
 class App {
   config: ConfigService;
@@ -10,21 +10,25 @@ class App {
   }
   listen() {
     const fastify = Fastify({
-      logger: true,
+      logger: {
+        transport: {
+          target: '@fastify/one-line-logger',
+        },
+      },
       trustProxy: this.config.reverse_proxy,
       connectionTimeout: this.config.timeout,
     });
 
     fastify.get<{ Querystring: { url: string } }>(
-      "/render",
+      '/render',
       {
         schema: {
           querystring: {
-            type: "object",
+            type: 'object',
             properties: {
-              url: { type: "string" },
+              url: { type: 'string' },
             },
-            required: ["url"],
+            required: ['url'],
           },
         },
       },
@@ -40,14 +44,14 @@ class App {
             idleTime: 100,
           });
         } catch {
-          reply.header("x-message", "Page load timeout");
+          reply.header('x-message', 'Page load timeout');
         }
 
         const data = await page.content();
 
         browser.close();
 
-        reply.type("text/html");
+        reply.type('text/html');
         return data;
       }
     );

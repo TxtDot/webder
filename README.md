@@ -2,8 +2,9 @@
 
 Proxy that renders client-side JavaScript apps (e.g. React apps) on server and returns the resulting HTML code.
 
-- JS is disabled/unsupported, no proxy: blank page or "Enable JS to continue"
-- With webder: all desired content, no need to use JS interpreter
+| Response without proxy                                            | With webder                                        |
+| ----------------------------------------------------------------- | -------------------------------------------------- |
+| JS is disabled/unsupported, blank page or "Enable JS to continue" | all desired content, no need to use JS interpreter |
 
 > [!WARNING]
 > No HTML purification is performed, so passing code directly from webder can lead to XSS attacks. Local network requests are not blocked too, check domains/IPs to avoid SSRF attacks.
@@ -11,13 +12,13 @@ Proxy that renders client-side JavaScript apps (e.g. React apps) on server and r
 
 ## Usage
 
-`/render?url=...`
+The proxy is accessible at `/render?url=...` by default.
 
 For available config fields, check `.env.example`.  
 Docker is supported.
 
 ```bash
-npm install
-npm run build
-npm start
+pnpm install
+pnpm run build
+pnpm start
 ```

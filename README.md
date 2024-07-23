@@ -1,4 +1,10 @@
-# webder
+<div align="center">
+  
+  ![webder logo](https://github.com/TxtDot/.github/raw/main/imgs/webder.png)
+  
+  # webder
+  
+</div>
 
 Proxy that renders client-side JavaScript apps (e.g. React apps) on server and returns the resulting HTML code.
 
